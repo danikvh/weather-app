@@ -9,13 +9,14 @@
     });
 } */
 
-async function getWeather(location) {
+async function getAPI(location) {
     try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=c33f948099d03df8b1e9c1af37f03a89`)
-        console.log(response)
+        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=c33f948099d03df8b1e9c1af37f03a89`, {mode: "cors"})
+        const data = await response.json()
+        console.log(data)
     } catch (error) {
         console.log(Error("Error"))
     }
 }
 
-getWeather("London")
+getAPI("London")
