@@ -1,11 +1,8 @@
-import getAPI from "./api.js"
+import getWeather from "./api.js"
 
 export default class UI {
-    static loadPage() {
-        let data = {}
-        getAPI("London").then(x => {
-            data = x
-            console.log(data)
-        })
+    static async loadPage() {
+        let data = await getWeather("London")
+        console.log(data)        
     }
 }
