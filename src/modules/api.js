@@ -31,7 +31,7 @@ async function getAPI(location) {
         result.weather = data.weather
         result.wind = data.wind
 
-        localStorage.setItem("weatherData", JSON.stringify(data))
+        localStorage.setItem("weatherData", JSON.stringify(result))
     } catch (error) {
         console.log(Error("Error"))
     }
