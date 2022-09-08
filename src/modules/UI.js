@@ -10,5 +10,29 @@ export default class UI {
     static showInfo(data) {
         document.getElementById("clouds").textContent = 
             "Clouds: " + data.clouds.all
+        document.getElementById("rain").textContent = 
+            "Rain: " + data.rain
+        document.getElementById("temp").textContent = 
+            "Temperature: " + data.main.temp
+        document.getElementById("feels").textContent = 
+            "Feels Like: " + data.main.feels_like
+        document.getElementById("maxtemp").textContent =
+            "Max Temperature: " + data.main.temp_max
+        document.getElementById("mintemp").textContent = 
+           "Min Temperature: " + data.main.temp_min
+        document.getElementById("humidity").textContent =
+            "Humidity: " + data.main.humidity
+        document.getElementById("pressure").textContent = 
+            "Pressure: " + data.main.pressure
+        document.getElementById("sunrise").textContent =
+            "Sunrise: " + data.sunrise 
+        document.getElementById("sunset").textContent =
+            "Sunset: " + data.sunset  
+        document.getElementById("timezone").textContent = 
+            "Time Zone: " + data.timezone 
+        document.getElementById("winddeg").textContent = 
+            "Wind Degree: " + data.wind.deg 
+        document.getElementById("windspeed").textContent = 
+            "Wind Speed: " + data.wind.speed 
     }
 }
