@@ -30,6 +30,14 @@
     height: 25px;
 }
 
+.headline {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background-color: rgb(31, 143, 143);
+    color: white;
+}
+
 .info {
     display: flex;
 }
