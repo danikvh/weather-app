@@ -8,10 +8,15 @@ export default class UI {
     }
 
     static showInfo(data) {
-        const icon = document.createElement("img")
+        //Icon
+        const icon = document.getElementById("icon")
         icon.src = images[data.weather[0].icon + ".png"]
-        document.getElementById("headline").appendChild(icon)
 
+        //Date
+        const date = document.getElementById("date")
+        date.textContent = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
+
+        //Info boxes
         document.getElementById("clouds").textContent = 
             "Clouds: " + data.clouds.all
         document.getElementById("temp").textContent = 
