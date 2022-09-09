@@ -8,7 +8,9 @@ export default class UI {
     }
 
     static showInfo(data) {
-        //document.getElementById("headline").
+        const icon = document.createElement("img")
+        icon.src = images[data.weather[0].icon + ".png"]
+        document.getElementById("headline").appendChild(icon)
 
         document.getElementById("clouds").textContent = 
             "Clouds: " + data.clouds.all
