@@ -8,10 +8,10 @@ export default class UI {
     }
 
     static showInfo(data) {
+        //document.getElementById("headline").
+
         document.getElementById("clouds").textContent = 
             "Clouds: " + data.clouds.all
-        document.getElementById("rain").textContent = 
-            "Rain: " + data.rain
         document.getElementById("temp").textContent = 
             "Temperature: " + data.main.temp
         document.getElementById("feels").textContent = 
@@ -34,5 +34,17 @@ export default class UI {
             "Wind Degree: " + data.wind.deg 
         document.getElementById("windspeed").textContent = 
             "Wind Speed: " + data.wind.speed 
-    }
+    }  
 }
+
+
+
+/* OBTAIN ICONS */
+
+const images = {};
+
+function importAll(r) {
+    r.keys().forEach((key) => (images[key.replace('./', '')] = r(key)));
+}
+
+importAll(require.context('../assets/icons', false, /\.png$/));

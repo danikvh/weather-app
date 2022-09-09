@@ -29,3 +29,13 @@
     border-radius: 4px;
     height: 25px;
 }
+
+.info {
+    display: flex;
+}
+
+.info .box {
+    width: 200px;
+    height: 100px;
+    border: solid 1px black;
+}
