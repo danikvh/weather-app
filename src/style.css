@@ -16,7 +16,7 @@
     margin-right: 40px;
 }
 
-.header-search {
+#header-search {
     border: none;
     border-radius: 4px;
     outline: none;
@@ -24,10 +24,19 @@
     width: clamp(100px, 50vw, 500px);
 }
 
-.header-bttn {
+#header-bttn {
     border: none;
     border-radius: 4px;
     height: 25px;
+}
+
+#header-bttn:hover {
+    background-color: rgb(204, 204, 204);
+}
+
+#header-bttn:active {
+    background-color: rgb(158, 158, 158);
+    color: white;
 }
 
 .headline {

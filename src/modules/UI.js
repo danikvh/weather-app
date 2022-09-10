@@ -1,9 +1,8 @@
 import getWeather from "./api.js"
 
-export default class UI {
-    static async loadPage() {
-        let data = await getWeather("London")
-        console.log(data)  
+export default class UI {   
+    static async getLocation(location) {
+        let data = await getWeather(location)
         this.showInfo(data)
     }
 
@@ -39,7 +38,7 @@ export default class UI {
             "Wind Degree: " + data.wind.deg + "deg"
         document.getElementById("windspeed").textContent = 
             "Wind Speed: " + data.wind.speed + "m/s"
-    }  
+    } 
 }
 
 
