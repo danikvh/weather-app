@@ -33,6 +33,6 @@ async function getAPI(location) {
 
         localStorage.setItem("weatherData", JSON.stringify(result))
     } catch (error) {
-        console.log(Error("Error"))
+        console.log(alert("Error, introduce a correct city name"))
     }
 }

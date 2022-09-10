@@ -7,8 +7,8 @@ export default class UI {
         if (search.value === "") location = "London"
         else location = search.value
         search.value = ""
-        document.getElementById("location").textContent = location
         let data = await getWeather(location)
+        document.getElementById("location").textContent = data.name
         UI.showInfo(data)
     }
 
