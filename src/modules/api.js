@@ -16,7 +16,7 @@ export default async function getWeather(location) {
 
 async function getAPI(location) {
     try {
-        document.getElementById('loading').style.display = 'block'
+        document.getElementById('modal').style.display = 'block'
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=c33f948099d03df8b1e9c1af37f03a89`, {mode: "cors"})
         const data = await response.json()
 
@@ -33,9 +33,9 @@ async function getAPI(location) {
         result.wind = data.wind
 
         localStorage.setItem("weatherData", JSON.stringify(result))
-        document.getElementById('loading').style.display = 'none'
+        document.getElementById('modal').style.display = 'none'
     } catch (error) {
         console.log(alert("Error, introduce a correct city name"))
-        document.getElementById('loading').style.display = 'none'
+        document.getElementById('modal').style.display = 'none'
     }
 }
