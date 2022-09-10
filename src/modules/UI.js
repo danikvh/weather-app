@@ -18,29 +18,27 @@ export default class UI {
 
         //Info boxes
         document.getElementById("clouds").textContent = 
-            "Clouds: " + data.clouds.all
+            "Clouds: " + data.clouds.all + "%"
         document.getElementById("temp").textContent = 
-            "Temperature: " + data.main.temp
+            "Temperature: " + Math.round((data.main.temp - 273)* 10) / 10 + "Cº"
         document.getElementById("feels").textContent = 
-            "Feels Like: " + data.main.feels_like
+            "Feels Like: " + Math.round((data.main.feels_like - 273)* 10) / 10 + "Cº"
         document.getElementById("maxtemp").textContent =
-            "Max Temperature: " + data.main.temp_max
+            "Max: " + Math.round((data.main.temp_max - 273)* 10) / 10 + "Cº"
         document.getElementById("mintemp").textContent = 
-           "Min Temperature: " + data.main.temp_min
+           "Min: " + Math.round((data.main.temp_min - 273)* 10) / 10 + "Cº"
         document.getElementById("humidity").textContent =
-            "Humidity: " + data.main.humidity
+            "Humidity: " + data.main.humidity + "%"
         document.getElementById("pressure").textContent = 
-            "Pressure: " + data.main.pressure
+            "Pressure: " + data.main.pressure + "hPa"
         document.getElementById("sunrise").textContent =
-            "Sunrise: " + data.sunrise 
+            "Sunrise: " + new Date(data.sunrise * 1000).toISOString().substr(11, 8)
         document.getElementById("sunset").textContent =
-            "Sunset: " + data.sunset  
-        document.getElementById("timezone").textContent = 
-            "Time Zone: " + data.timezone 
+            "Sunset: " + new Date(data.sunset * 1000).toISOString().substr(11, 8)
         document.getElementById("winddeg").textContent = 
-            "Wind Degree: " + data.wind.deg 
+            "Wind Degree: " + data.wind.deg + "deg"
         document.getElementById("windspeed").textContent = 
-            "Wind Speed: " + data.wind.speed 
+            "Wind Speed: " + data.wind.speed + "m/s"
     }  
 }
 
