@@ -3,12 +3,16 @@ import getWeather from "./api.js"
 export default class UI {   
     static async getLocation() {
         let location = ""
+        let actual = document.getElementById("location")
         const search = document.getElementById("header-search")
-        if (search.value === "") location = "London"
+        if (search.value === "") {
+            if (actual.textContent === "") location = "London"
+            else location = actual.textContent 
+        }
         else location = search.value
         search.value = ""
         let data = await getWeather(location)
-        document.getElementById("location").textContent = data.name
+        actual.textContent = data.name
         UI.showInfo(data)
     }
 
