@@ -1,9 +1,15 @@
 import getWeather from "./api.js"
 
 export default class UI {   
-    static async getLocation(location) {
+    static async getLocation() {
+        let location = ""
+        const search = document.getElementById("header-search")
+        if (search.value === "") location = "London"
+        else location = search.value
+        search.value = ""
+        document.getElementById("location").textContent = location
         let data = await getWeather(location)
-        this.showInfo(data)
+        UI.showInfo(data)
     }
 
     static showInfo(data) {
@@ -41,6 +47,10 @@ export default class UI {
     } 
 }
 
+/* BUTTONS */
+
+let buttonSearch = document.getElementById("header-bttn")
+buttonSearch.addEventListener("click", UI.getLocation)
 
 
 /* OBTAIN ICONS */
